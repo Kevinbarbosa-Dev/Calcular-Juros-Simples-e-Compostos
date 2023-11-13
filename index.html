@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juros Compostos</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="title">
+                <h2 id="jc">Juros Compostos</h2>
+            </div>
+            <div class="input-box">
+                <div class="input-content">
+                    <label for="CA">Capital inicial:</label>
+                    <input type="number" name="entrada" id="CA" class="item" placeholder="R$ 0,00">
+                </div>
+
+
+
+                <div class="input-content">
+                    <label for="per">Taxa de Juros:</label>
+                    <input type="number" name="taxa" id="per" class="item" placeholder="%">
+                </div>
+
+
+                <div class="input-content">
+                    <label for="prazo">Tempo investido:</label>
+                    <input type="number" name="prazo" id="prazo" class="item" placeholder="a.m">
+                </div>
+            </div>
+            <div class="resultado">
+                <span id="conclusão">Resultado:</span>
+                <span id="res">R$0,00</span>
+                <button id="montante">
+                    Calcular
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
