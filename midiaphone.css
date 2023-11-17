@@ -1,4 +1,4 @@
-@media (max-width:600px) {
+/*@media (max-width:600px) {
     * {
         font-family: 'Roboto';
         margin: 0;
@@ -9,16 +9,18 @@
         font-family: "Roboto";
         font-weight: 500;
         text-align: start;
+        
     }
 
     .container {
         background-color: #252526;
         display: flex;
-        border-radius: 10px;
-        padding: 40px;
-        display: flex;
         justify-content: center;
+        align-items: center;
+        height: 100%;
         gap: 25px;
+
+        
     }
 
     .content {
@@ -26,7 +28,7 @@
         color: rgb(236, 232, 232);
         box-shadow: 0px 0px 5px black;
         border-radius: 10px;
-        padding: 40px;
+        padding: 15px;
     }
 
     .input-box {

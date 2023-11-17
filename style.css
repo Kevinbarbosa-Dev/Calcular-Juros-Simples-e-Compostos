@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Sriracha&display=swap');
-@media (min-width:930px){
+
 * {
     font-family: 'Roboto';
     margin: 0;
@@ -32,7 +32,8 @@ h2 {
     box-shadow: 0px 0px 5px black;
     border-radius: 10px;
     padding: 40px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 25px;
 }
 
@@ -42,7 +43,9 @@ h2 {
     gap: 25px;
 }
 
+
 .input-content {
+    display: grid;
     font-family: "Roboto";
     font-weight: 300;
     font-size: 18px;
@@ -95,9 +98,18 @@ span {
     background-color: #252526;
 }
 
+
+@media screen and (max-width:768px){
+        .content {
+            grid-template-columns: repeat(1,1fr);
+            gap: 2rem;
+    }
+
 }
-@media (min-width:768px) and (max-width:1024px){
+@media screen and (max-width:426px) {
     .content {
-        background-color: red;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+
     }
 }
