@@ -13,7 +13,9 @@ h2 {
     text-align: start;
 }
 
-
+body {
+    font-size: 16px;
+}
 
 .container {
 
@@ -33,7 +35,7 @@ h2 {
     border-radius: 10px;
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
@@ -68,10 +70,11 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    gap:25px;
+    gap: 25px;
 
 }
-#conclusão{
+
+#conclusão {
     text-align: center;
     font-size: 25px;
     margin: 0;
@@ -99,17 +102,26 @@ span {
 }
 
 
-@media screen and (max-width:768px){
-        .content {
-            grid-template-columns: repeat(1,1fr);
-            gap: 2rem;
-    }
-
-}
-@media screen and (max-width:426px) {
+@media screen and (max-width:768px) {
     .content {
-        grid-template-columns: repeat(1,1fr);
-        gap: 2rem;
-
+        grid-template-columns: 1fr;
     }
+
+    .item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .container {
+        height: auto;
+    }
+
+.item {
+    font-size: 20px;
+}
+
+#montante {
+    padding: 10px;
+}
 }
