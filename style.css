@@ -1,20 +1,80 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Sriracha&display=swap');
 
+
 * {
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
 }
 
-h2 {
-    font-family: "Roboto";
-    font-weight: 500;
-    text-align: start;
+
+button#jc.active {
+    color: #1F1F1D;
+    background-color: #2C7344;
 }
 
-body {
-    font-size: 16px;
+button#js.active {
+    color: #1F1F1D;
+    background-color: #F2C744;
+}
+
+.cor-juros-simples {
+    color: #F2C744;
+
+}
+
+.cor-juros-compostos {
+    color: #2C7344;
+    ;
+    /* Cor para Juros Simples */
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: start;
+
+}
+
+#js,
+#jc {
+    font-family: "Roboto";
+    font-weight: 500;
+    height: 100%;
+    margin-top: 25px;
+    font-size: 24px;
+    color: rgb(236, 232, 232);
+    background-color: transparent;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    border: none;
+
+}
+
+#js {
+    color: #F2C744;
+}
+
+#jc {
+    color: #2C7344;
+
+}
+
+#js:hover {
+    cursor: pointer;
+    background-color: #F2C744;
+    transition: 0.3s;
+    box-shadow: 0px 0px 5px black;
+    color: #1F1F1D;
+}
+
+#jc:hover {
+    cursor: pointer;
+    background-color: #2C7344;
+    transition: 0.3s;
+    color: #1F1F1D;
 }
 
 .container {
@@ -23,8 +83,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
+
 
 }
 
@@ -37,7 +99,11 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    max-width: 100%;
 }
+
+
+
 
 .input-box {
     display: flex;
@@ -102,26 +168,63 @@ span {
 }
 
 
-@media screen and (max-width:768px) {
+
+
+
+@media screen and (max-width: 768px) {
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #js,
+    #jc {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .container {
+        background-size: cover;
+        display: block;
+    }
+
     .content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+
+    }
+
+    .input-content {
+        width: 100%;
     }
 
     .item {
-        width: 100%;
+        width: 93%; 
+        font-size: 16px; 
+        display: flex;
+        align-items: center;
+    }
+
+    #conclusão {
+        font-size: 24px;
+    }
+
+    #res {
+        font-size: 32px; 
     }
 }
 
-@media screen and (max-width:430px) {
-    .container {
-        height: auto;
+@media screen and (max-width: 430px) {
+    .item {
+        font-size: 18px; 
     }
 
-.item {
-    font-size: 20px;
+    #montante {
+        padding: 10px;
+    }
 }
 
-#montante {
-    padding: 10px;
-}
-}
+

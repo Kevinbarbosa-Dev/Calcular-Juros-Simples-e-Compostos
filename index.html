@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,41 +8,40 @@
     <title>Juros Compostos</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="content">
-            <div class="title">
-                <h2 id="jc">Juros Compostos</h2>
-            </div>
-            <div class="input-box">
-                <div class="input-content">
-                    <label for="CA">Capital inicial:</label>
-                    <input type="number" name="entrada" id="CA" class="item" placeholder="R$ 0,00">
+<body> 
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <button id="jc" class="compostoid" onclick="calculo('compostos')">
+                        Juros Compostos
+                    </button>
+                    <button id="js" class="simples1" onclick="calculo('simples')">Juros Simples</button>
                 </div>
-
-
-
-                <div class="input-content">
-                    <label for="per">Taxa de Juros:</label>
-                    <input type="number" name="taxa" id="per" class="item" placeholder="%">
+                <div class="input-box">
+                    <div class="input-content">
+                        <label for="CA">Capital inicial:</label>
+                        <input type="number" name="entrada" id="CA" class="item" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-content">
+                        <label for="per">Taxa de Juros:</label>
+                        <input type="number" name="taxa" id="per" class="item" placeholder="%">
+                    </div>
+                    <div class="input-content">
+                        <label for="prazo">Tempo investido:</label>
+                        <input type="number" name="prazo" id="prazo" class="item" placeholder="a.m">
+                    </div>
                 </div>
-
-
-                <div class="input-content">
-                    <label for="prazo">Tempo investido:</label>
-                    <input type="number" name="prazo" id="prazo" class="item" placeholder="a.m">
+                <div class="resultado">
+                    <span id="conclusão">Resultado:</span>
+                    <span id="res">R$0,00</span>
+                    <button id="montante" onclick="montante()">
+                        Calcular
+                    </button>
                 </div>
             </div>
-            <div class="resultado">
-                <span id="conclusão">Resultado:</span>
-                <span id="res">R$0,00</span>
-                <button id="montante">
-                    Calcular
-                </button>
-            </div>
-        </div>
+            
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
