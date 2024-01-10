@@ -20,6 +20,20 @@ document.getElementById('montante').addEventListener('click', function () {
 
 
 */
+function formatar(input_id) {
+    let inputElement = document.getElementById(input_id)
+
+    if (input_id === 'CA') {
+        let valor = inputElement.value.replace(/\D/g, '');
+        valor = (parseFloat(valor) / 100).toFixed(2);
+        inputElement.value = valor;
+    }else if(input_id === 'per'){
+        let valor = inputElement.value.replace(/\D/g, '');
+        valor = (parseFloat(valor) / 100).toFixed(2);
+        inputElement.value = valor
+    }
+}
+
 
 
 let tipoCalculo = '';
@@ -31,11 +45,11 @@ function calculo(tipo) {
     if (tipo === 'simples') {
         document.getElementById("jc").classList.remove("active");
         document.getElementById("js").classList.add("active");
-        resultadoElement.classList.add("cor-juros-simples");
+        
     } else if (tipo === 'compostos') {
         document.getElementById("js").classList.remove("active");
         document.getElementById("jc").classList.add("active");
-        resultadoElement.classList.add("cor-juros-compostos");
+        
     }
 
 }
@@ -44,7 +58,7 @@ function montante() {
     let juros = parseFloat(document.getElementById('per').value) / 100;
     let prazo = parseFloat(document.getElementById('prazo').value);
     let anoFormatado = Math.floor(prazo / 12);
-
+    document.getElementById('CA').innerHTML = ini.toFixed(2)
     let meses = 0
     meses = prazo - 12
     /* arrumar os meses */
@@ -56,15 +70,15 @@ function montante() {
         document.getElementById('res').innerHTML = resultadoFormatado;
 
         document.getElementById('conclusão').innerHTML = `Em ${anoFormatado} ${anoFormatado > 1 ? 'anos' : 'ano'} e ${meses} ${meses === 1 ? 'mês' : 'meses'} você terá:`;
-        conclusão.style.color = 'white';
-            
+        conclusão.style.color = '#1E2529';
+
     }
     else if (tipoCalculo === 'compostos') {
         let res = ini * (1 + juros) ** prazo;
         let resultadoFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('res').innerHTML = resultadoFormatado;
         document.getElementById('conclusão').innerHTML = `Em ${anoFormatado} ${anoFormatado > 1 ? 'anos' : 'ano'} você terá:`;
-        conclusão.style.color = 'white';
+        conclusão.style.color = '#1E2529';
     }
 }
 

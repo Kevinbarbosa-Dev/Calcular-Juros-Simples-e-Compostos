@@ -20,11 +20,11 @@
                 <div class="input-box">
                     <div class="input-content">
                         <label for="CA">Capital inicial:</label>
-                        <input type="number" name="entrada" id="CA" class="item" placeholder="R$ 0,00">
+                        <input type="text" oninput="formatar('CA')" name="entrada" id="CA" class="item" placeholder="R$ 0,00">
                     </div>
                     <div class="input-content">
                         <label for="per">Taxa de Juros:</label>
-                        <input type="number" name="taxa" id="per" class="item" placeholder="%">
+                        <input type="text" oninput="formatar('per')" name="taxa" id="per" class="item" placeholder="%">
                     </div>
                     <div class="input-content">
                         <label for="prazo">Tempo investido:</label>
@@ -39,7 +39,7 @@
                     </button>
                 </div>
             </div>
-            
+           
     </div>
     <script src="script.js"></script>
 </body>
