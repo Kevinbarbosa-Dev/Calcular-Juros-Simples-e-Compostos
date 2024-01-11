@@ -154,6 +154,7 @@ button#js.active {
     font-size: 18px;
     cursor: pointer;
     color:#F2C744;
+    width: 75%;
 
 }
 
@@ -161,11 +162,24 @@ button#js.active {
     transition: 0.2s;
     background-color: #1e2529e8;
 }
-
-.content > footer  {
+.botoes{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+#limpar{
+border: none;
+background: transparent;
+border-radius: 5px;
+padding: 10px;
+font-size: 18px;
+cursor: pointer;
+color:#1E2529;
+}
+#limpar:hover{
+    transition: 0.2s;
+    color:#1e2529e0 ;
 }
 
 button:focus {

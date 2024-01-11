@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,11 @@
         <div class="container">
             <div class="content">
                 <div class="title">
+                    <button id="js" class="simples1" onclick="calculo('simples')">Juros Simples</button>
                     <button id="jc" class="compostoid" onclick="calculo('compostos')">
                         Juros Compostos
                     </button>
-                    <button id="js" class="simples1" onclick="calculo('simples')">Juros Simples</button>
+                    
                 </div>
                 <div class="input-box">
                     <div class="input-content">
@@ -28,15 +29,18 @@
                     </div>
                     <div class="input-content">
                         <label for="prazo">Tempo investido:</label>
-                        <input type="number" name="prazo" id="prazo" class="item" placeholder="a.m">
+                        <input type="text" oninput="formatar('prazo')" name="prazo" id="prazo" class="item" placeholder="a.m">
                     </div>
                 </div>
                 <div class="resultado">
                     <span id="conclusão">Resultado:</span>
                     <span id="res">R$0,00</span>
+                    <div class="botoes">
                     <button id="montante" onclick="montante()">
                         Calcular
                     </button>
+                    <button id="limpar" onclick="clean()">Limpar</button>
+                    </div>
                 </div>
             </div>
            <footer>Feito por Kevin Barbosa</footer>

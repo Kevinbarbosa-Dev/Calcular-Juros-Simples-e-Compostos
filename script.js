@@ -1,34 +1,22 @@
-/*
-document.getElementById('montante').addEventListener('click', function () {
-    let ini = parseFloat(document.getElementById('CA').value);
-    let juros = parseFloat(document.getElementById('per').value) / 100;
-    let prazo = parseFloat(document.getElementById('prazo').value);
-    let anoFormatado = prazo / 12;
-    
-    if(ini.length === 0 || juros.length === 0 || prazo.length === 0){
-        document.getElementById('conclusão').innerHTML = `Insira os dados`;
-        document.getElementById('conclusão').style.color = 'red'
-    }
 
-    let res = ini * (1 + juros) ** prazo;
-    let resultadoFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('res').innerHTML = resultadoFormatado;
-    
-    
-    
-});
-*/
+function clean() {
+    document.getElementById('CA').value = "";
+    document.getElementById('per').value = "";
+    document.getElementById('prazo').value = "";
+    document.getElementById('conclusão').innerHTML = "Resultado:";
+    document.getElementById('res').innerHTML = "R$0,00";
+}
 
 function formatar(input_id) {
     let inputElement = document.getElementById(input_id)
 
-    if (input_id === 'CA') {
+    if (input_id === 'CA' || input_id === 'per') {
         let valor = inputElement.value.replace(/\D/g, '');
         valor = (parseFloat(valor) / 100).toFixed(2);
         inputElement.value = valor;
-    } else if (input_id === 'per') {
+    }
+    else if (input_id === 'prazo') {
         let valor = inputElement.value.replace(/\D/g, '');
-        valor = (parseFloat(valor) / 100).toFixed(2);
         inputElement.value = valor
     }
 }
@@ -60,18 +48,22 @@ function montante() {
     let prazo = parseFloat(document.getElementById('prazo').value);
     let anoFormatado = Math.floor(prazo / 12);
     let meses = prazo % 12
-    document.getElementById('CA').innerHTML = ini.toFixed(2)
     if (isNaN(ini) || isNaN(juros) || isNaN(prazo) || ini === 0 || juros === 0 || prazo === 0) {
         document.getElementById('conclusão').innerHTML = `Insira os dados`;
+        document.getElementById('res').innerHTML = 'R$0,00'
         conclusão.style.color = '#1E2529'
     }
-    else if (anoFormatado >= 1 && meses === 0) {
+    if (anoFormatado >= 1 && meses === 0) {
         document.getElementById('conclusão').innerHTML = `Em ${anoFormatado} ${anoFormatado > 1 ? 'anos' : 'ano'} você terá:`;
+        conclusão.style.color = '#1E2529';
+    } else if (meses >= 1 && anoFormatado === 0) {
+        document.getElementById('conclusão').innerHTML = `Em ${meses} ${meses === 1 ? 'mês' : 'meses'} você terá:`;
         conclusão.style.color = '#1E2529';
     } else {
         document.getElementById('conclusão').innerHTML = `Em ${anoFormatado} ${anoFormatado > 1 ? 'anos' : 'ano'} e ${meses} ${meses === 1 ? 'mês' : 'meses'} você terá:`;
         conclusão.style.color = '#1E2529';
     }
+
 
 
     if (tipoCalculo === 'simples') {
@@ -86,16 +78,7 @@ function montante() {
         let res = ini * (1 + juros) ** prazo;
         let resultadoFormatado = res.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('res').innerHTML = resultadoFormatado;
-        
+
     }
 }
-
-
-
-/* se prazo for 1 até 11, então retornará mês ou meses
-
-
-
-
-*/
 
