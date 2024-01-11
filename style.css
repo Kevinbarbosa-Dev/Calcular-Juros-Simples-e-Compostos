@@ -3,7 +3,8 @@
 
 
 * {
-    font-family: 'Roboto';
+    font-family:'Roboto';
+    font-weight: 500;
     margin: 0;
     padding: 0;
 }
@@ -31,7 +32,6 @@ button#js.active {
 
 #js,
 #jc {
-    font-family: "Roboto";
     font-weight: 500;
     height: 100%;
     margin-top: 25px;
@@ -70,11 +70,10 @@ button#js.active {
 
     background-color: #1E2529;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
+    
 
 
 }
@@ -84,6 +83,7 @@ button#js.active {
     color: #1E2529;
     box-shadow: 0px 0px 5px black;
     border-radius: 10px;
+    margin: auto;
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -103,8 +103,6 @@ button#js.active {
 
 .input-content {
     display: grid;
-    font-family: "Roboto";
-    font-weight: 500;
     font-size: 24px;
     color: #1E2529;
 }
@@ -129,19 +127,23 @@ button#js.active {
     justify-content: space-between;
     width: 100%;
     gap: 25px;
-
+    
 }
 
 #conclusão {
+    font-family: "Roboto";
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
     margin: 0;
     color:#1E2529;
 }
 
-span {
+#res {
+
     text-align: center;
-    font-size: 50px;
+    font-size: 46px;
+    
+    
 }
 
 #montante {
@@ -170,6 +172,11 @@ button:focus {
     outline: none;
     border: none;
   }
+
+footer{
+    color: #F2C744;
+    
+}
 
 @media screen and (max-width: 768px) {
     .title {
@@ -220,6 +227,9 @@ button:focus {
 
     #res {
         font-size: 32px; 
+    }
+    footer{
+        display: none;
     }
 }
 
